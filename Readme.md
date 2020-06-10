@@ -12,7 +12,7 @@ See the examples here:
 
 ``` http://localhost:29435/swagger ```
 
-![ASPNETCOREWebAPIVersions](https://github.com/FabianGosebrink/ASPNETCore-WebAPI-Sample/blob/master/.github/servion.jpg?raw=true)
+![ASPNETCOREWebAPIVersions](https://github.com/FabianGosebrink/ASPNETCore-WebAPI-Sample/blob/master/.github/versions.jpg?raw=true)
 
 ## GET all Foods
 
