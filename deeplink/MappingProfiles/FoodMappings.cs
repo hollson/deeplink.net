@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Deeplink.Dtos;
+using Deeplink.Dto;
 using Deeplink.Entities;
 
 namespace Deeplink.MappingProfiles

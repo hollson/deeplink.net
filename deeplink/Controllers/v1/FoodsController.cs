@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Linq;
 using AutoMapper;
-using Deeplink.Dtos;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Deeplink.Repositories;
 using System.Collections.Generic;
+
+using Deeplink.Dto;
 using Deeplink.Entities;
 using Deeplink.Models;
 using Deeplink.Helpers;

@@ -1,13 +1,10 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Routing;
-using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,14 +22,14 @@ namespace Deeplink
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
+        // 此方法由运行时调用。使用此方法将服务添加到容器中。
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddOptions();
@@ -49,7 +46,7 @@ namespace Deeplink
                 var factory = x.GetRequiredService<IUrlHelperFactory>();
                 return factory.GetUrlHelper(actionContext);
             });
-            
+
             services.AddControllers()
                    .AddNewtonsoftJson(options =>
                        options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver())
@@ -62,11 +59,11 @@ namespace Deeplink
             services.AddAutoMapper(typeof(FoodMappings));
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        // 此方法由运行时调用。使用此方法配置HTTP请求管道。
         public void Configure(
-            IApplicationBuilder app, 
-            ILoggerFactory loggerFactory, 
-            IWebHostEnvironment env, 
+            IApplicationBuilder app,
+            ILoggerFactory loggerFactory,
+            IWebHostEnvironment env,
             IApiVersionDescriptionProvider provider)
         {
             if (env.IsDevelopment())

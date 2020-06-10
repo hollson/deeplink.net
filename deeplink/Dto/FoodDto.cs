@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Deeplink.Dtos
+namespace Deeplink.Dto
 {
     public class FoodDto
     {
